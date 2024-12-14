@@ -48,4 +48,21 @@ sqlc_generate:
 sqlc_init:
 	docker run --rm -v $(PWD):/src -w /src kjconroy/sqlc init
 
-PHONY: createpostgres createdb dropdb stoppostgres runpostgres deletepostgres new_migration migrateup migrateup1 migratedown migratedown1 migrateupDEV sqlc_generate sqlc_init
+db_docs:
+	dbdocs build doc/db.dbml
+
+protob: # make sure statik is installed and this is ran as an admin (run in bash)
+	rm -f pb/*.go
+	rm -f doc/swagger/*.swagger.json
+	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
+           --go-grpc_out=pb --go-grpc_opt=paths=source_relative \
+           --grpc-gateway_out=pb \
+           --grpc-gateway_opt paths=source_relative \
+           --openapiv2_out=doc/swagger --openapiv2_opt=allow_merge=true,merge_file_name=simple_bank \
+           proto/*.proto
+	statik -src=./doc/swagger -dest=./doc
+
+redis:
+	docker run --name redis -p 6379:6379 -d redis:8.0-M02-alpine
+
+PHONY: createpostgres createdb dropdb stoppostgres runpostgres deletepostgres new_migration migrateup migrateup1 migratedown migratedown1 migrateupDEV sqlc_generate sqlc_init db_docs protob redis

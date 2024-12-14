@@ -1,0 +1,17 @@
+syntax="proto3";// specify the syntax
+
+package pb; // import the pb package
+
+import "google/protobuf/timestamp.proto"; // import the timestamp.proto file from the google/protobuf directory. time stamp is not built in type in proto buff so we use this
+
+option go_package = "github.com/fsobh/auth/pb"; // go_package is used to specify the go package name for the generated code.
+
+
+message User {
+  //type, name, index to uniquely identify the fields when serializing/deserializing message in binary format (using small numbers is good for memory)
+  string username = 1;
+  string full_name = 2;
+  string email = 3;
+  google.protobuf.Timestamp password_change_at = 4;
+  google.protobuf.Timestamp created_at = 5;
+}

@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package pb;
+
+import "user.proto"; // import the user struct we defined in user.proto so we can use it here (may need to config IDE plugins)
+
+option go_package = "github.com/fsobh/auth/pb"; // go_package is used to specify the go package name for the generated code.
+
+
+message CreateUserRequest {
+  string username = 1;
+  string full_name = 2;
+  string email = 3;
+  string password = 4;
+}
+
+message CreateUserResponse {
+  User user = 1;
+}

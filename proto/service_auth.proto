@@ -1,0 +1,73 @@
+syntax="proto3";
+
+package pb;
+
+import "google/api/annotations.proto"; // this is for the gateway to support http requests
+import "rpc_create_user.proto";
+import "rpc_update_user.proto";
+import "rpc_verify_email.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "rpc_login_user.proto";
+
+option go_package = "github.com/fsobh/auth/pb"; // go_package is used to specify the go package name for the generated code.
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+        info: {
+          title: "Authentication API";
+          version: "1.0";
+          contact: {
+            name: "gRPC-Gateway API for Authentication";
+            url: "https://localhost:8080";
+            email: "fsobh15@icloud.com";
+          };
+        };
+};
+service SimpleBank {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse){
+    option (google.api.http) = {
+      post: "/v1/create_user"
+      body: "*"
+    };
+    //https://github.com/grpc-ecosystem/grpc-gateway/blob/c200b1ca07658baed28d35a7a6810af043c9b68d/examples/internal/proto/examplepb/a_bit_of_everything.proto#L615C4-L653C4
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "use this to Create new user";
+      summary: "Create new user";
+    };
+
+
+  }
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse){
+    option (google.api.http) = {
+      patch: "/v1/update_user"
+      body: "*"
+    };
+    //https://github.com/grpc-ecosystem/grpc-gateway/blob/c200b1ca07658baed28d35a7a6810af043c9b68d/examples/internal/proto/examplepb/a_bit_of_everything.proto#L615C4-L653C4
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "use this to update a user";
+      summary: "Update user";
+    };
+
+  }
+  rpc LoginUser(LoginUserRequest) returns (LoginUserResponse){
+    option (google.api.http) = {
+      post: "/v1/login_user"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "use this to login user";
+      summary: "User Login";
+    };
+  }
+
+  rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse){
+    option (google.api.http) = {
+      get: "/v1/verify_email"
+
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "use this to verify a users email";
+      summary: "Verify Email";
+    };
+  }
+
+}
