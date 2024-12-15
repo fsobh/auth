@@ -4,9 +4,8 @@ import (
 	db "github.com/fsobh/auth/db/sqlc"
 	"github.com/fsobh/auth/pb"
 	"github.com/fsobh/auth/util"
+	"github.com/fsobh/auth/worker"
 )
-
-//TODO: implement store interface in sqlc folder
 
 // Server define http server here 1.
 type Server struct {
