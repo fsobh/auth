@@ -74,7 +74,7 @@ func (processor *RedisTaskProcessor) ProcessTaskSendVerifyEmail(ctx context.Cont
 	}
 
 	subject := "Verify your email"
-	verifyEmailURL := fmt.Sprintf("http://localhost:8080/v1/verify_email?email_id=%d&secret=%s", verifyEmail.ID, verifyEmail.SecretCode)
+	verifyEmailURL := fmt.Sprintf("http://localhost:8080/v1/verify_email?email_id=%d&secret_code=%s", verifyEmail.ID, verifyEmail.SecretCode)
 	contentHtml := fmt.Sprintf("<h1>Verify your email</h1><p>Please click <a href='%s'>here</a> to verify your email</p>", verifyEmailURL)
 	to := []string{user.Email}
 

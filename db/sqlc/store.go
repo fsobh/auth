@@ -22,13 +22,9 @@ type SQLStore struct {
 // so we won't have to copy everything that Queries implements into store interface (Check querier.go)
 type Store interface {
 	Querier
-	//CreateUserTx(ctx context.Context, arg CreateUserTxParams) (CreateUserTxResult, error)
-
+	CreateUserTx(ctx context.Context, arg CreateUserTxParams) (CreateUserTxResult, error)
+	VerifyEmailTx(ctx context.Context, arg VerifyEmailTxParams) (VerifyEmailTxResult, error)
 }
-
-//for deadlock fmt.logs
-//var txKey = struct {
-//}{}
 
 func NewStore(db *sql.DB) Store {
 	return &SQLStore{

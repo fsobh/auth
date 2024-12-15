@@ -11,7 +11,7 @@
   },
   "tags": [
     {
-      "name": "SimpleBank"
+      "name": "Auth"
     }
   ],
   "consumes": [
@@ -25,7 +25,7 @@
       "post": {
         "summary": "Create new user",
         "description": "use this to Create new user",
-        "operationId": "SimpleBank_CreateUser",
+        "operationId": "Auth_CreateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -51,7 +51,7 @@
           }
         ],
         "tags": [
-          "SimpleBank"
+          "Auth"
         ]
       }
     },
@@ -59,7 +59,7 @@
       "post": {
         "summary": "User Login",
         "description": "use this to login user",
-        "operationId": "SimpleBank_LoginUser",
+        "operationId": "Auth_LoginUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -85,7 +85,7 @@
           }
         ],
         "tags": [
-          "SimpleBank"
+          "Auth"
         ]
       }
     },
@@ -93,7 +93,7 @@
       "patch": {
         "summary": "Update user",
         "description": "use this to update a user",
-        "operationId": "SimpleBank_UpdateUser",
+        "operationId": "Auth_UpdateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -119,7 +119,7 @@
           }
         ],
         "tags": [
-          "SimpleBank"
+          "Auth"
         ]
       }
     },
@@ -127,7 +127,7 @@
       "get": {
         "summary": "Verify Email",
         "description": "use this to verify a users email",
-        "operationId": "SimpleBank_VerifyEmail",
+        "operationId": "Auth_VerifyEmail",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -158,7 +158,7 @@
           }
         ],
         "tags": [
-          "SimpleBank"
+          "Auth"
         ]
       }
     }
