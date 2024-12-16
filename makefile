@@ -1,8 +1,6 @@
 IMAGE_NAME = 'auth-service'
 USER = root
 PASSWORD = secret
-DEV_PASSWORD = RORCqbTq3qpzNGXCQeJh
-DEV_HOST = simple-bank.cziqss8y0sci.us-east-2.rds.amazonaws.com
 PORT = 5432
 DB_NAME = auth_service
 
@@ -38,9 +36,6 @@ migratedown:
 
 migratedown1:
 	migrate -path db/migration -database "postgresql://$(USER):$(PASSWORD)@localhost:$(PORT)/$(DB_NAME)?sslmode=disable" -verbose down 1
-
-migrateupDEV:
-	migrate -path db/migration -database "postgresql://$(USER):$(DEV_PASSWORD)@$(DEV_HOST):$(PORT)/$(DB_NAME)" -verbose up
 
 sqlc_generate:
 	docker run --rm -v $(PWD):/src -w /src kjconroy/sqlc generate

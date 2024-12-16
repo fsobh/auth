@@ -8,7 +8,7 @@
 
 
 
-<div style="width: 100%">
+<div style="width: 900px">
 <img src="doc/dbml.svg" align="center"  alt="db diagram" width="70%">
 </div>
 
@@ -549,36 +549,44 @@ Install auth using one of the following methods:
 **Using `go modules`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white" />](https://golang.org/)
 
 ```sh
-❯ go build
+❯ go mod tidy
 ```
 
 
 
 
 ### 🤖 Usage
-Run auth using the following command:
+Run the service using the following command:
 **Using `go modules`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white" />](https://golang.org/)
 
 ```sh
-❯ go run {entrypoint}
+// todo: add steps to run db + redis q
+❯ go run main.go
 ```
 
 
-### 🧪 Testing
-Run the test suite using the following command:
-**Using `go modules`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white" />](https://golang.org/)
+[//]: # (### 🧪 Testing)
 
-```sh
-❯ go test ./...
-```
+[//]: # (Run the test suite using the following command:)
+
+[//]: # (**Using `go modules`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white" />]&#40;https://golang.org/&#41;)
+
+[//]: # ()
+[//]: # (```sh)
+
+[//]: # (❯ go test ./...)
+
+[//]: # (```)
 
 
 ---
 ## 📌 Project Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+- [X] **`Task 1`**: <strike>Authentication + sessions.</strike>
+- [ ] **`Task 2`**: Add RBAC.
+- [ ] **`Task 3`**: Add OAuth2 support.
+- [ ] **`Task 4`**: Add unit tests.
+- [ ] **`Task 5`**: Add Github actions to auto deploy.
 
 ---
 
@@ -626,13 +634,17 @@ Run the test suite using the following command:
 ---
 
 ## 🎗 License
-
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+- This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
 ## 🙌 Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- [Zero log](https://github.com/rs/zerolog)
+- [sqlc](https://github.com/sqlc-dev/sqlc-gen-go)
+- [proto buf](https://github.com/golang/protobuf)
+- [mockdb](https://pkg.go.dev/github.com/tmaiaroto/discfg/storage/mockdb)
+- [statik](https://github.com/rakyll/statik)
+- [asynq](https://github.com/hibiken/asynq)
 
 ---
