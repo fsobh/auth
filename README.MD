@@ -525,13 +525,14 @@ Before getting started with auth, ensure your runtime environment meets the foll
 
 - **Programming Language:** Go
 - **Package Manager:** Go modules
+- **Containerization:** Docker
 
 
 ### ⚙️ Installation
 
-Install auth using one of the following methods:
+Install auth using  the following methods:
 
-**Build from source:**
+
 
 1. Clone the auth repository:
 ```sh
@@ -560,8 +561,12 @@ Run the service using the following command:
 **Using `go modules`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white" />](https://golang.org/)
 
 ```sh
-// todo: add steps to run db + redis q
-❯ go run main.go
+// todo : add steps to export AWS keys
+// todo : test creation upon failure of email sent.
+❯ make createpostgres # create postgres instance locally
+❯ make createdb # create db in postgres instance
+❯ make redis  # start up redis queue
+❯ go run main.go # run the gateway server
 ```
 
 

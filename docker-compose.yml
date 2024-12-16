@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: auth-database
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=auth_service
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U root -d auth_service"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:8.0-M02-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auth-api
+    ports:
+      - "8080:8080"  # HTTP gateway
+      - "9090:9090"  # gRPC
+    environment:
+      - DB_SOURCE=postgresql://root:secret@postgres:5432/auth_service?sslmode=disable
+      - REDIS_ADDRESS=redis:6379
+      - HTTP_SERVER_ADDRESS=0.0.0.0:8080
+      - GRPC_SERVER_ADDRESS=0.0.0.0:9090
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  redis_data: 
