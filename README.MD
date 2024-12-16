@@ -1,19 +1,17 @@
-<p align="left"><h1 align="left">Authentication API (gRPC/HTTP) </h1></p>
 
-An authentication API for user management and authorization supporting both **gRPC** and **HTTP** protocols
+<p align="left"><h1 align="left">Authentication service</h1></p>
 
-<p align="left">
-	<img src="https://img.shields.io/github/license/fsobh/auth?style=default&logo=opensourceinitiative&logoColor=white&color=00fff2" alt="license">
-	<img src="https://img.shields.io/github/last-commit/fsobh/auth?style=default&logo=git&logoColor=white&color=00fff2" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/fsobh/auth?style=default&color=00fff2" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/fsobh/auth?style=default&color=00fff2" alt="repo-language-count">
-</p>
-<p align="left"><!-- default option, no dependency badges. -->
-</p>
-<p align="left">
-	<!-- default option, no dependency badges. -->
-</p>
-<br>
+- Supports **HTTP/2** and **gRPC** protocols.
+- PostgreSQL database with **sqlc** for type-safe queries.
+- Redis queue for background tasks.
+
+
+
+
+<div style="width: 100%">
+<img src="doc/dbml.svg" align="center"  alt="db diagram" width="70%">
+</div>
+
 
 ## 🔗 Table of Contents
 
@@ -35,13 +33,21 @@ An authentication API for user management and authorization supporting both **gR
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+A Golang authentication service API, supporting both HTTP/2 and gRPC protocols.
+The service is designed to provide user authentication and authorization features,
+including user registration, login, and email verification.
+The service is built
+using a PostgreSQL database with sqlc for type-safe queries and a Redis queue for background tasks. 
 
 ---
 
 ## 👾 Features
 
-<code>❯ REPLACE-ME</code>
+- **User Registration**: Register a new user with a unique email, username, and password.
+- **Email Verification**: Sends a verification email to a user's email address. **User creation will rollback if verification email fails to send (using transactional queries with callbacks)**
+- **User Login**: Authenticate a user with a valid email and password.
+- **User Update**: Update a user's profile information, including their email, username, and password.
+
 
 ---
 
