@@ -120,23 +120,23 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/makefile'>makefile</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ makefile with commands for local development</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/main.go'>main.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Main entry point for API service</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/go.mod'>go.mod</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Go mod file</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/go.sum'>go.sum</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Go sum file</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/sqlc.yaml'>sqlc.yaml</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Sqlc V2 configuration file</code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -147,19 +147,19 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/worker/processor.go'>processor.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Task processor for Redis queue - picks up tasks from the queue to process and run them</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/worker/task_send_verify_email.go'>task_send_verify_email.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Redis queue task for sending out the verification email to new users</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/worker/logger.go'>logger.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Logger for the Redis queue</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/worker/distributor.go'>distributor.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Redis task distributor interface - distributes the tasks into appropriate queues</code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -170,27 +170,27 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/proto/user.proto'>user.proto</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ proto buff specification for `User` object serialization</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/proto/rpc_update_user.proto'>rpc_update_user.proto</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ proto buff specification for `Update user` request / response serialization</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/proto/rpc_create_user.proto'>rpc_create_user.proto</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ proto buff specification for `Create user` request / response serialization</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/proto/service_auth.proto'>service_auth.proto</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ proto buff specification for API service </code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/proto/rpc_verify_email.proto'>rpc_verify_email.proto</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ proto buff specification for `Verify email` request / response serialization</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/proto/rpc_login_user.proto'>rpc_login_user.proto</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ proto buff specification for `Login user` request / response serialization</code></td>
 			</tr>
 			</table>
 			<details>
@@ -249,7 +249,7 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/db.dbml'>db.dbml</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Database markup version of the database schema</code></td>
 			</tr>
 			</table>
 			<details>
@@ -258,7 +258,7 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/statik/statik.go'>statik.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Serves static swagger specification page</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -269,47 +269,47 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-initializer.js'>swagger-initializer.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-ui-standalone-preset.js'>swagger-ui-standalone-preset.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/auth.swagger.json'>auth.swagger.json</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-ui-es-bundle.js'>swagger-ui-es-bundle.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-ui-bundle.js'>swagger-ui-bundle.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/index.css'>index.css</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-ui-es-bundle-core.js'>swagger-ui-es-bundle-core.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-ui.js'>swagger-ui.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/swagger-ui.css'>swagger-ui.css</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/index.html'>index.html</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/doc/swagger/oauth2-redirect.html'>oauth2-redirect.html</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ cloned from <a href="https://github.com/swagger-api/swagger-ui/tree/master/dist">swagger-ui</a></code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -322,43 +322,43 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/metadata.go'>metadata.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Helper to capture metadata of gRPC gateway requests</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/logger.go'>logger.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Logger file for gRPC & HTTP requests</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/authorization.go'>authorization.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Validates token format for incoming authorized calls</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/rpc_update_user.go'>rpc_update_user.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Function that is called to update a user record when the api endpoint is invoked </code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/rpc_verify_email.go'>rpc_verify_email.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Function that is called to verify a new users email when the api endpoint is invoked</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/error.go'>error.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Helper to handle generic errors (invalid request params, unauthorized calls)</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/rpc_login_user.go'>rpc_login_user.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Function that is called to log a user into their account when the api endpoint is invoked</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/converter.go'>converter.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Helper to sanitize User database objects from sensitive data (like password)</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/rpc_create_user.go'>rpc_create_user.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Function that is called to create a new user account when the api endpoint is invoked</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/gapi/server.go'>server.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Initializes a new Server to run</code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -369,7 +369,7 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/val/validator.go'>validator.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Helper to validate string format for email, names, passwords, etc... </code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -380,35 +380,35 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/user.pb.go'>user.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/service_auth_grpc.pb.go'>service_auth_grpc.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/rpc_login_user.pb.go'>rpc_login_user.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/rpc_update_user.pb.go'>rpc_update_user.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/rpc_create_user.pb.go'>rpc_create_user.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/service_auth.pb.go'>service_auth.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/service_auth.pb.gw.go'>service_auth.pb.gw.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/pb/rpc_verify_email.pb.go'>rpc_verify_email.pb.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Code generated by protoc-gen-go</code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -419,15 +419,15 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/util/password.go'>password.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Helper to hash & compare passwords</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/util/config.go'>config.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Server configs read from app.env</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/fsobh/auth/blob/master/util/random.go'>random.go</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Random generator utility</code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -441,39 +441,39 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/models.go'>models.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Code generated by sqlc</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/db.go'>db.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Code generated by sqlc</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/verify_email.sql.go'>verify_email.sql.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Code generated by sqlc</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/user.sql.go'>user.sql.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Code generated by sqlc</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/querier.go'>querier.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Code generated by sqlc </code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/tx_verify_email.go'>tx_verify_email.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Transactional write to the database to update user records across tables when email is verified</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/store.go'>store.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ SQLStore provides all functions to execute db queries and transactions. Also used to Mock DB for tests</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/tx_create_user.go'>tx_create_user.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Transactional write that creates a user in the database. This transaction has a callback that executes only when the database write is successful. We use this call back to send out the verification email upon sign up </code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/sqlc/sessions.sql.go'>sessions.sql.go</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Code generated by sqlc</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -484,15 +484,15 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/query/user.sql'>user.sql</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Queries & annotations pertaining to users for sqlc to generate application database code</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/query/sessions.sql'>sessions.sql</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Queries & annotations pertaining to sessions for sqlc to generate application database code</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/query/verify_email.sql'>verify_email.sql</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Queries & annotations pertaining to verifying emails for sqlc to generate application database code</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -503,11 +503,11 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/migration/000001_init_schema.up.sql'>000001_init_schema.up.sql</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Initial database schema for migrate up to use</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/fsobh/auth/blob/master/db/migration/000001_init_schema.down.sql'>000001_init_schema.down.sql</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Initial drop database schema for migrate down to use</code></td>
 					</tr>
 					</table>
 				</blockquote>
