@@ -563,6 +563,7 @@ Run the service using the following command:
 ```sh
 // todo : add steps to export AWS keys
 // todo : test creation upon failure of email sent.
+// todo : add stpes to run with docker compose 
 ❯ make createpostgres # create postgres instance locally
 ❯ make createdb # create db in postgres instance
 ❯ make redis  # start up redis queue
