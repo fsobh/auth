@@ -21,6 +21,9 @@ type Config struct {
 	RedisAddress         string        `mapstructure:"REDIS_ADDRESS"`
 	SESFromEmail         string        `mapstructure:"SES_FROM_EMAIL"`
 	SESMailRegion        string        `mapstructure:"SES_MAIL_REGION"`
+	AWSAccessKeyID     string `mapstructure:"AWS_ACCESS_KEY_ID"`
+	AWSSecretAccessKey string `mapstructure:"AWS_SECRET_ACCESS_KEY"`
+	AWSDefaultRegion   string `mapstructure:"AWS_DEFAULT_REGION"`
 }
 
 func LoadConfig(path string) (config Config, err error) {
