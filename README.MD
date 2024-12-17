@@ -530,7 +530,7 @@ Before getting started with auth, ensure your runtime environment meets the foll
 
 ### ⚙️ Installation
 
-Install auth using  the following methods:
+Install auth using the following methods:
 
 
 
@@ -557,17 +557,26 @@ Install auth using  the following methods:
 
 
 ### 🤖 Usage
-Run the service using the following command:
-**Using `go modules`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white" />](https://golang.org/)
+**Steps 1 and 2 are essential for the service to run**
 
+1. **Update `app.env` with your environment variables**
+
+   |        Name        | Description
+   |:------------------:| :---: 
+   | PASETO_PRIVATE_KEY | Hexadecimal private key (Paseto V2)   
+   | PASETO_PUBLIC_KEY | Hexadecimal public key (Paseto V2)     
+   | SES_FROM_EMAIL     | Verified AWS SES email address
+2. **Update the `.env` file with your AWS account credentials**
+
+   |        Name        | Description
+      |:------------------:| :---: 
+   | AWS_ACCESS_KEY_ID | AWS IAM access key   
+   | AWS_SECRET_ACCESS_KEY | AWS IAM secret key     
+   | AWS_DEFAULT_REGION     | AWS region
+
+3. Run the following command to start the service:
 ```sh
-// todo : add steps to export AWS keys
-// todo : test creation upon failure of email sent.
-// todo : add stpes to run with docker compose 
-❯ make createpostgres # create postgres instance locally
-❯ make createdb # create db in postgres instance
-❯ make redis  # start up redis queue
-❯ go run main.go # run the gateway server
+❯ docker compose up  
 ```
 
 
