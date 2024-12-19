@@ -37,7 +37,7 @@ migratedown:
 migratedown1:
 	migrate -path db/migration -database "postgresql://$(USER):$(PASSWORD)@localhost:$(PORT)/$(DB_NAME)?sslmode=disable" -verbose down 1
 
-sqlc_generate:
+sqlc:
 	docker run --rm -v $(PWD):/src -w /src kjconroy/sqlc generate
 
 sqlc_init:
@@ -60,4 +60,8 @@ protob: # make sure statik is installed and this is ran as an admin (run in bash
 redis:
 	docker run --name redis -p 6379:6379 -d redis:8.0-M02-alpine
 
-PHONY: createpostgres createdb dropdb stoppostgres runpostgres deletepostgres new_migration migrateup migrateup1 migratedown migratedown1 migrateupDEV sqlc_generate sqlc_init db_docs protob redis
+mock:
+	mockgen --package mockdb --destination db/mock/store.go github.com/fsobh/auth/db/sqlc Store
+	mockgen --package mockwk --destination worker/mock/distributor.go github.com/fsobh/auth/worker TaskDistributor
+
+PHONY: createpostgres createdb dropdb stoppostgres runpostgres deletepostgres new_migration migrateup migrateup1 migratedown migratedown1 sqlc sqlc_init db_docs protob redis mock
