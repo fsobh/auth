@@ -599,7 +599,7 @@ Install auth using the following methods:
 
 - [X] **`Task 1`**: <strike>Authentication + sessions.</strike>
 - [ ] **`Task 2`**: Add unit tests.
-- [ ] **`Task 3`**: Upgrade db driver from pg/lib to pgx/v5.
+- [ ] **`Task 3`**: Upgrade db driver from lib/pq to pgx/v5.
 - [ ] **`Task 4`**: Add RBAC.
 - [ ] **`Task 5`**: Add OAuth2 support.
 - [ ] **`Task 6`**: Add Github actions to auto deploy.
