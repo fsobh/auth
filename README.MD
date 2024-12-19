@@ -598,10 +598,11 @@ Install auth using the following methods:
 ## 📌 Project Roadmap
 
 - [X] **`Task 1`**: <strike>Authentication + sessions.</strike>
-- [ ] **`Task 2`**: Add RBAC.
-- [ ] **`Task 3`**: Add OAuth2 support.
-- [ ] **`Task 4`**: Add unit tests.
-- [ ] **`Task 5`**: Add Github actions to auto deploy.
+- [ ] **`Task 2`**: Add unit tests.
+- [ ] **`Task 3`**: Upgrade db driver from pg/lib to pgx/v5.
+- [ ] **`Task 4`**: Add RBAC.
+- [ ] **`Task 5`**: Add OAuth2 support.
+- [ ] **`Task 6`**: Add Github actions to auto deploy.
 
 ---
 
