@@ -601,8 +601,8 @@ Install auth using the following methods:
 - [X] **`Task 2`**: <strike>Add unit tests.</strike>
 - [X] **`Task 3`**: <strike>Upgrade db driver from lib/pq to pgx/v5.</strike>
 - [ ] **`Task 4`**: Add RBAC.
-- [ ] **`Task 5`**: Add OAuth2 support.
-- [ ] **`Task 6`**: Add Github actions to auto deploy.
+- [ ] **`Task 5`**: Add Github actions to auto deploy to AWS EKS cluster.
+- [ ] **`Task 6`**: Add OAuth2 support (Google/Apple/Meta).
 
 ---
 
