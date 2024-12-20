@@ -1,5 +1,6 @@
 Table users as U {
   username varchar [pk]
+  role varchar [not null, default: 'user']
   hashed_password varchar [not null]
   full_name varchar [not null]
   email varchar [unique, not null]
@@ -26,5 +27,4 @@ Table sessions {
     client_ip varchar [not null]
     is_blocked boolean [not null, default: false]
     expires_at timestamptz [not null]
-
 }
