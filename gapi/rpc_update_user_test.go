@@ -2,12 +2,12 @@ package gapi
 
 import (
 	"context"
-	"database/sql"
 	mockdb "github.com/fsobh/auth/db/mock"
 	db "github.com/fsobh/auth/db/sqlc"
 	"github.com/fsobh/auth/pb"
 	"github.com/fsobh/auth/util"
 	"github.com/fsobh/token"
+	"github.com/jackc/pgx/v5/pgtype"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/mock/gomock"
 	"google.golang.org/grpc/codes"
@@ -41,11 +41,11 @@ func TestUpdateUserAPI(t *testing.T) {
 			buildStubs: func(store *mockdb.MockStore) {
 				arg := db.UpdateUserParams{
 					Username: user.Username,
-					FullName: sql.NullString{
+					FullName: pgtype.Text{
 						String: newName,
 						Valid:  true,
 					},
-					Email: sql.NullString{
+					Email: pgtype.Text{
 						String: newEmail,
 						Valid:  true,
 					},
@@ -93,7 +93,7 @@ func TestUpdateUserAPI(t *testing.T) {
 				store.EXPECT().
 					UpdateUser(gomock.Any(), gomock.Any()).
 					Times(1).
-					Return(db.User{}, sql.ErrNoRows)
+					Return(db.User{}, db.ErrRecordNotFound)
 
 			},
 
@@ -120,7 +120,7 @@ func TestUpdateUserAPI(t *testing.T) {
 				store.EXPECT().
 					UpdateUser(gomock.Any(), gomock.Any()).
 					Times(0).
-					Return(db.User{}, sql.ErrNoRows)
+					Return(db.User{}, db.ErrRecordNotFound)
 
 			},
 
@@ -147,7 +147,7 @@ func TestUpdateUserAPI(t *testing.T) {
 				store.EXPECT().
 					UpdateUser(gomock.Any(), gomock.Any()).
 					Times(0).
-					Return(db.User{}, sql.ErrNoRows)
+					Return(db.User{}, db.ErrRecordNotFound)
 
 			},
 
@@ -174,7 +174,7 @@ func TestUpdateUserAPI(t *testing.T) {
 				store.EXPECT().
 					UpdateUser(gomock.Any(), gomock.Any()).
 					Times(0).
-					Return(db.User{}, sql.ErrNoRows)
+					Return(db.User{}, db.ErrRecordNotFound)
 
 			},
 
