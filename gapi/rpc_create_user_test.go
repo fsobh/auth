@@ -141,33 +141,40 @@ func TestCreateUserAPI(t *testing.T) {
 				require.Equal(t, codes.Internal, st.Code())
 			},
 		},
-		//{
-		//	name: "DuplicateUsername",
-		//	body: &pb.CreateUserRequest{
-		//		Username: user.Username,
-		//		Password: password,
-		//		FullName: user.FullName,
-		//		Email:    user.Email,
-		//	},
-		//	buildStubs: func(store *mockdb.MockStore) {
-		//		store.EXPECT().
-		//			CreateUser(gomock.Any(), gomock.Any()).
-		//			Times(1).
-		//			Return(db.User{}, &pq.Error{Code: "23505"})
-		//	},
-		//	checkResponse: func(t *testing.T, res *pb.CreateUserResponse, err error) {
-		//		//require.Equal(t, http.StatusForbidden, recorder.Code)
-		//	},
-		//},
+		{
+			name: "DuplicateUsername",
+			req: &pb.CreateUserRequest{
+				Username: user.Username,
+				Password: password,
+				FullName: user.FullName,
+				Email:    user.Email,
+			},
+			buildStubs: func(store *mockdb.MockStore, taskDistributor *mockwk.MockTaskDistributor) {
+				store.EXPECT().
+					CreateUserTx(gomock.Any(), gomock.Any()).
+					Times(1).
+					Return(db.CreateUserTxResult{}, db.ErrUniqueViolation)
+
+				taskDistributor.EXPECT().
+					DistributeTaskSendVerifyEmail(gomock.Any(), gomock.Any(), gomock.Any()).
+					Times(0)
+			},
+			checkResponse: func(t *testing.T, res *pb.CreateUserResponse, err error) {
+				require.Error(t, err)
+				st, ok := status.FromError(err)
+				require.True(t, ok)
+				require.Equal(t, codes.AlreadyExists, st.Code())
+			},
+		},
 		//{
 		//	name: "InvalidUsername",
-		//	body: &pb.CreateUserRequest{
+		//	req: &pb.CreateUserRequest{
 		//		Username: "invalid-user#1",
 		//		Password: password,
 		//		FullName: user.FullName,
 		//		Email:    user.Email,
 		//	},
-		//	buildStubs: func(store *mockdb.MockStore) {
+		//	buildStubs: func(store *mockdb.MockStore, taskDistributor *mockwk.MockTaskDistributor) {
 		//		store.EXPECT().
 		//			CreateUser(gomock.Any(), gomock.Any()).
 		//			Times(0)
@@ -178,13 +185,13 @@ func TestCreateUserAPI(t *testing.T) {
 		//},
 		//{
 		//	name: "InvalidEmail",
-		//	body: &pb.CreateUserRequest{
+		//	req: &pb.CreateUserRequest{
 		//		Username: user.Username,
 		//		Password: password,
 		//		FullName: user.FullName,
 		//		Email:    "invalid-email",
 		//	},
-		//	buildStubs: func(store *mockdb.MockStore) {
+		//	buildStubs: func(store *mockdb.MockStore, taskDistributor *mockwk.MockTaskDistributor) {
 		//		store.EXPECT().
 		//			CreateUser(gomock.Any(), gomock.Any()).
 		//			Times(0)
@@ -195,13 +202,13 @@ func TestCreateUserAPI(t *testing.T) {
 		//},
 		//{
 		//	name: "TooShortPassword",
-		//	body: &pb.CreateUserRequest{
+		//	req: &pb.CreateUserRequest{
 		//		Username: user.Username,
 		//		Password: "123",
 		//		FullName: user.FullName,
 		//		Email:    user.Email,
 		//	},
-		//	buildStubs: func(store *mockdb.MockStore) {
+		//	buildStubs: func(store *mockdb.MockStore, taskDistributor *mockwk.MockTaskDistributor) {
 		//		store.EXPECT().
 		//			CreateUser(gomock.Any(), gomock.Any()).
 		//			Times(0)

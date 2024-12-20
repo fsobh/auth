@@ -33,9 +33,6 @@ func RandomString(n int) string {
 func RandomOwner() string {
 	return RandomString(6)
 }
-func RandomMoney() int64 {
-	return RandomInt(0, 1000)
-}
 func RandomEmail() string {
 	return fmt.Sprintf("%s@mail.com", RandomString(6))
 }

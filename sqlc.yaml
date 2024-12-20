@@ -8,5 +8,11 @@ sql:
         package: "db"
         out: "db/sqlc"
         emit_json_tags: true
+        sql_package: "pgx/v5"
         emit_interface: true
         emit_empty_slices: true
+        overrides:
+          - db_type: "timestamptz" #override the timestamptz default type that pgx/v5 uses
+            go_type: "time.Time"
+          - db_type: "uuid" #override the UUID default type that pgx/v5 uses
+            go_type: "github.com/google/uuid.UUID"
