@@ -659,7 +659,7 @@ Install auth using the following methods:
 - [Zero log](https://github.com/rs/zerolog)
 - [sqlc](https://github.com/sqlc-dev/sqlc-gen-go)
 - [proto buf](https://github.com/golang/protobuf)
-- [mockdb](https://pkg.go.dev/github.com/tmaiaroto/discfg/storage/mockdb)
+- [mock gen](https://github.com/uber-go/mock)
 - [statik](https://github.com/rakyll/statik)
 - [asynq](https://github.com/hibiken/asynq)
 
