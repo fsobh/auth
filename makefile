@@ -43,6 +43,9 @@ sqlc:
 sqlc_init:
 	docker run --rm -v $(PWD):/src -w /src kjconroy/sqlc init
 
+db_schema:
+	dbml2sql --postgres -o doc/schema.sql doc/db.dbml
+
 db_docs:
 	npx dbdocs build doc/db.dbml
 
@@ -64,4 +67,4 @@ mock:
 	mockgen --package mockdb --destination db/mock/store.go github.com/fsobh/auth/db/sqlc Store
 	mockgen --package mockwk --destination worker/mock/distributor.go github.com/fsobh/auth/worker TaskDistributor
 
-PHONY: createpostgres createdb dropdb stoppostgres runpostgres deletepostgres new_migration migrateup migrateup1 migratedown migratedown1 sqlc sqlc_init db_docs protob redis mock
+PHONY: createpostgres createdb db_schema dropdb stoppostgres runpostgres deletepostgres new_migration migrateup migrateup1 migratedown migratedown1 sqlc sqlc_init db_docs protob redis mock
