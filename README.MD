@@ -97,6 +97,15 @@ using a PostgreSQL database with sqlc for type-safe queries and a Redis queue fo
     │   ├── service_auth.proto
     │   └── user.proto
     ├── sqlc.yaml
+    ├── token
+    │   ├── jwt_maker.go
+    │   ├── maker.go
+    │   ├── paseto_asym_maker.go
+    │   ├── paseto_maker.go
+    │   ├── payload.go
+    │   ├── jwt_maker_test.go
+    │   ├── paseto_asym_maker_test.go
+    │   └── paseto_test.go
     ├── util
     │   ├── config.go
     │   ├── password.go
@@ -600,7 +609,7 @@ Install auth using the following methods:
 - [X] **`Task 1`**: <strike>Authentication + sessions.</strike>
 - [ ] **`Task 2`**: Add unit tests.
 - [ ] **`Task 3`**: Upgrade db driver from lib/pq to pgx/v5.
-- [ ] **`Task 4`**: Add RBAC.
+- [X] **`Task 4`**: <strike>Add RBAC.</strike>
 - [ ] **`Task 5`**: Add OAuth2 support.
 - [ ] **`Task 6`**: Add Github actions to auto deploy.
 
