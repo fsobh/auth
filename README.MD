@@ -572,8 +572,8 @@ Install auth using the following methods:
 
    |        Name        | Description
    |:------------------:| :---: 
-   | PASETO_PRIVATE_KEY | Hexadecimal private key (Paseto V2)   
-   | PASETO_PUBLIC_KEY | Hexadecimal public key (Paseto V2)     
+   | PASETO_PRIVATE_KEY | private key (Paseto V2)   
+   | PASETO_PUBLIC_KEY | public key (Paseto V2)     
    | SES_FROM_EMAIL     | Verified AWS SES email address
 2. **Update the `.env` file with your AWS account credentials**
 
