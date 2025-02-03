@@ -6,9 +6,9 @@ import (
 	"encoding/hex"
 	"fmt"
 	db "github.com/fsobh/auth/db/sqlc"
+	"github.com/fsobh/auth/token"
 	"github.com/fsobh/auth/util"
 	"github.com/fsobh/auth/worker"
-	"github.com/fsobh/token"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/crypto/ed25519"
 	"google.golang.org/grpc/metadata"
@@ -32,9 +32,9 @@ func newTestServer(t *testing.T, store db.Store, taskDistributor worker.TaskDist
 	return server
 }
 
-func newContextWithBearerToken(t *testing.T, token token.Maker, username string, duration time.Duration) context.Context {
+func newContextWithBearerToken(t *testing.T, token token.Maker, username string, role string, duration time.Duration) context.Context {
 
-	accessToken, _, err := token.CreateToken(username, duration)
+	accessToken, _, err := token.CreateToken(username, role, duration)
 
 	require.NoError(t, err)
 

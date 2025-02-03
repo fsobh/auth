@@ -4,9 +4,9 @@ import (
 	"fmt"
 	db "github.com/fsobh/auth/db/sqlc"
 	"github.com/fsobh/auth/pb"
+	"github.com/fsobh/auth/token"
 	"github.com/fsobh/auth/util"
 	"github.com/fsobh/auth/worker"
-	"github.com/fsobh/token"
 )
 
 // Server define http server here 1.
@@ -21,7 +21,7 @@ type Server struct {
 // NewServer Creates a new gRPC server
 func NewServer(config util.Config, store db.Store, taskDistributor worker.TaskDistributor) (*Server, error) {
 
-	accessTokenMaker, err := token.NewPasetoV2Public(config.PasetoPrivateKeyStr, config.PasetoPublicKeyStr)
+	accessTokenMaker, err := token.NewAsymPasetoMaker(config.PasetoPrivateKey, config.PasetoPublicKey)
 
 	if err != nil {
 		return nil, fmt.Errorf("cannot create token maker: %w", err)

@@ -6,8 +6,8 @@ import (
 	mockdb "github.com/fsobh/auth/db/mock"
 	db "github.com/fsobh/auth/db/sqlc"
 	"github.com/fsobh/auth/pb"
+	"github.com/fsobh/auth/token"
 	"github.com/fsobh/auth/util"
-	"github.com/fsobh/token"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/mock/gomock"
 	"google.golang.org/grpc/codes"
@@ -68,7 +68,7 @@ func TestUpdateUserAPI(t *testing.T) {
 			},
 
 			buildContext: func(t *testing.T, tokenMaker token.Maker) context.Context {
-				return newContextWithBearerToken(t, tokenMaker, user.Username, time.Minute)
+				return newContextWithBearerToken(t, tokenMaker, user.Username, user.Role, time.Minute)
 			},
 
 			checkResponse: func(t *testing.T, res *pb.UpdateUserResponse, err error) {
@@ -98,7 +98,7 @@ func TestUpdateUserAPI(t *testing.T) {
 			},
 
 			buildContext: func(t *testing.T, tokenMaker token.Maker) context.Context {
-				return newContextWithBearerToken(t, tokenMaker, user.Username, time.Minute)
+				return newContextWithBearerToken(t, tokenMaker, user.Username, user.Role, time.Minute)
 			},
 
 			checkResponse: func(t *testing.T, res *pb.UpdateUserResponse, err error) {
@@ -125,7 +125,7 @@ func TestUpdateUserAPI(t *testing.T) {
 			},
 
 			buildContext: func(t *testing.T, tokenMaker token.Maker) context.Context {
-				return newContextWithBearerToken(t, tokenMaker, user.Username, time.Minute)
+				return newContextWithBearerToken(t, tokenMaker, user.Username, user.Role, time.Minute)
 			},
 
 			checkResponse: func(t *testing.T, res *pb.UpdateUserResponse, err error) {
@@ -152,7 +152,7 @@ func TestUpdateUserAPI(t *testing.T) {
 			},
 
 			buildContext: func(t *testing.T, tokenMaker token.Maker) context.Context {
-				return newContextWithBearerToken(t, tokenMaker, user.Username, -time.Minute)
+				return newContextWithBearerToken(t, tokenMaker, user.Username, user.Role, -time.Minute)
 			},
 
 			checkResponse: func(t *testing.T, res *pb.UpdateUserResponse, err error) {

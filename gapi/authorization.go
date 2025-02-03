@@ -3,7 +3,7 @@ package gapi
 import (
 	"context"
 	"fmt"
-	"github.com/fsobh/token"
+	"github.com/fsobh/auth/token"
 	"google.golang.org/grpc/metadata"
 	"strings"
 )
