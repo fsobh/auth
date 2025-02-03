@@ -607,8 +607,8 @@ Install auth using the following methods:
 ## 📌 Project Roadmap
 
 - [X] **`Task 1`**: <strike>Authentication + sessions.</strike>
-- [ ] **`Task 2`**: Add unit tests.
-- [ ] **`Task 3`**: Upgrade db driver from lib/pq to pgx/v5.
+- [X] **`Task 2`**: <strike>Add unit tests.</strike>
+- [X] **`Task 3`**: <strike>Upgrade db driver from lib/pq to pgx/v5.</strike>
 - [X] **`Task 4`**: <strike>Add RBAC.</strike>
 - [ ] **`Task 5`**: Add OAuth2 support.
 - [ ] **`Task 6`**: Add Github actions to auto deploy.
